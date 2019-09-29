@@ -11,7 +11,7 @@ target 'RxSwift-MVVM-Demo' do
     pod 'KakaJSON'
     
 # 加载图片库
-#    pod 'Kingfisher'
+    pod 'Kingfisher'
 
 # Rx库
     pod 'Moya/RxSwift'
@@ -20,9 +20,9 @@ target 'RxSwift-MVVM-Demo' do
     pod 'NSObject+Rx'
     pod 'RxOptional'
     pod 'Then'
-#    pod 'EmptyDataSet-Swift', '~> 4.2.0'
+    pod 'EmptyDataSet-Swift', '~> 4.2.0'
     
 # OC库
-#    pod 'MJRefresh'
+    pod 'MJRefresh'
     pod 'SVProgressHUD'
 end
