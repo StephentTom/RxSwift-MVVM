@@ -1,0 +1,90 @@
+PODS:
+  - Alamofire (4.9.0)
+  - Differentiator (3.1.0)
+  - EmptyDataSet-Swift (4.2.0)
+  - KakaJSON (1.1.0)
+  - Kingfisher (4.10.1)
+  - MJRefresh (3.2.0)
+  - Moya/Core (13.0.1):
+    - Alamofire (~> 4.1)
+    - Result (~> 4.1)
+  - Moya/RxSwift (13.0.1):
+    - Moya/Core
+    - RxSwift (~> 4.0)
+  - "NSObject+Rx (4.4.1)":
+    - RxSwift (~> 4.3)
+  - Result (4.1.0)
+  - RxCocoa (4.5.0):
+    - RxSwift (>= 4.4.2, ~> 4.4)
+  - RxDataSources (3.1.0):
+    - Differentiator (~> 3.0)
+    - RxCocoa (~> 4.0)
+    - RxSwift (~> 4.0)
+  - RxNetwork (0.10.0):
+    - RxNetwork/Core (= 0.10.0)
+  - RxNetwork/Core (0.10.0):
+    - Moya/RxSwift
+  - RxOptional (3.6.2):
+    - RxCocoa (~> 4.0)
+    - RxSwift (~> 4.0)
+  - RxSwift (4.5.0)
+  - SnapKit (4.2.0)
+  - SVProgressHUD (2.2.5)
+  - Then (2.6.0)
+
+DEPENDENCIES:
+  - EmptyDataSet-Swift (~> 4.2.0)
+  - KakaJSON
+  - Kingfisher
+  - MJRefresh
+  - Moya/RxSwift
+  - "NSObject+Rx"
+  - RxDataSources
+  - RxNetwork
+  - RxOptional
+  - SnapKit
+  - SVProgressHUD
+  - Then
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - Differentiator
+    - EmptyDataSet-Swift
+    - KakaJSON
+    - Kingfisher
+    - MJRefresh
+    - Moya
+    - "NSObject+Rx"
+    - Result
+    - RxCocoa
+    - RxDataSources
+    - RxNetwork
+    - RxOptional
+    - RxSwift
+    - SnapKit
+    - SVProgressHUD
+    - Then
+
+SPEC CHECKSUMS:
+  Alamofire: afc3e7c6db61476cb45cdd23fed06bad03bbc321
+  Differentiator: be49ca3408f0ecfc761e4c7763d20c62be01b9ad
+  EmptyDataSet-Swift: 1fa0b35f530a35f852ecb2b53564728b0c300aaf
+  KakaJSON: ea3747b231e28991c94c4738be966b798c1fa0ed
+  Kingfisher: c148cd7b47ebde9989f6bc7c27dcaa79d81279a0
+  MJRefresh: ed450d6eb9d3346a2cb033ab7eb6de090aeef437
+  Moya: f4a4b80ff2f8a4ffc208dfb31cd91636622fee6e
+  "NSObject+Rx": 9884a92f19b610795c431e10b4e601913b59c9e9
+  Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
+  RxCocoa: cbf70265dc65a981d4ac982e513c10cf23df24a0
+  RxDataSources: a843bad90c29817f5923ec8163f4af2de084ceb3
+  RxNetwork: 23fdb8eaeeef1266cb65fb971a4028d9c14f7129
+  RxOptional: 80426a0ddbd092573e4c482d8cc13302078c4d5e
+  RxSwift: f172070dfd1a93d70a9ab97a5a01166206e1c575
+  SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+  Then: 90cd104fd951cec1980a03f57704ad8f784d4d79
+
+PODFILE CHECKSUM: 98861b9e1cd369c2f3b2589e800584a3cb48bc06
+
+COCOAPODS: 1.7.3

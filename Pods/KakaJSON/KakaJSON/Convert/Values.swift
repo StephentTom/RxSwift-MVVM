@@ -12,16 +12,17 @@ import CoreGraphics
 #endif
 
 public struct Values {
-    static func value(_ val: Any?, _ type: Any.Type) -> Any? {
+    static func value(_ val: Any?,
+                      _ type: Any.Type,
+                      _ defaultValue: @autoclosure () -> Any? = nil) -> Any? {
         guard let v = val.kj_value else { return nil }
-        if v is NSNull { return v }
-        
         if Swift.type(of: v) == type { return v }
+        if v is NSNull { return nil }
         
         switch type {
         case is NumberValue.Type: return _number(v, type)
         case is StringValue.Type: return _string(v, type)
-        case is Convertible.Type: return _model(v, type)
+        case let ct as Convertible.Type: return _model(v, ct, defaultValue)
         case is DateValue.Type: return _date(v)
         case is ArrayValue.Type: return _array(v, type)
         case is DictionaryValue.Type: return _dictionary(v, type)
@@ -74,9 +75,15 @@ private extension Values {
         return lower
     }
     
-    static func _model(_ value: Any, _ type: Any.Type) -> Any? {
+    static func _model(_ value: Any,
+                       _ type: Convertible.Type,
+                       _ defaultValue: () -> Any?) -> Convertible? {
         guard let json = value as? [String: Any] else { return nil }
-        return json.kj.model(anyType: type)
+        if var model = defaultValue().kj_value as? Convertible {
+            model.kj_convert(from: json)
+            return model
+        }
+        return json.kj.model(type: type)
     }
     
     static func _anyArray(_ value: Any) -> [Any]? {
@@ -90,7 +97,7 @@ private extension Values {
         let mt = Metadata.type(type)
         if let type = (mt as? NominalType)?.genericTypes?.first,
             let modelType = type~! as? Convertible.Type {
-            return json.kj.modelArray(anyType: modelType)
+            return json.kj.modelArray(type: modelType)
         }
         
         return type is NSMutableArray.Type
@@ -116,7 +123,7 @@ private extension Values {
             
             var modelDict = [String: Any]()
             for (k, v) in json {
-                guard let m = v?.kj.model(anyType: modelType) else { continue }
+                guard let m = v?.kj.model(type: modelType) else { continue }
                 modelDict[k] = m
             }
             return modelDict.isEmpty ? nil : modelDict
@@ -182,18 +189,16 @@ private extension Values {
         return Double("\(decimal)").flatMap { NSNumber(value: $0) }
     }
     
-    static func _JSONValue(from set: SetValue) -> Any? {
+    static func _JSONValue(from set: SetValue) -> Any {
         return _JSONValue(from: set.kj_array())
     }
     
-    static func _JSONValue(from array: [Any]) -> Any? {
-        let newArray = array.compactMap { JSONValue($0) }
-        return newArray.isEmpty ? nil : newArray
+    static func _JSONValue(from array: [Any]) -> Any {
+        return array.compactMap { JSONValue($0) }
     }
     
-    static func _JSONValue(from dict: [String: Any]) -> Any? {
-        let newDict = dict.compactMapValues { JSONValue($0) }
-        return newDict.isEmpty ? nil : newDict
+    static func _JSONValue(from dict: [String: Any]) -> Any {
+        return dict.compactMapValues { JSONValue($0) }
     }
     
     static func _JSONValue(from num: NumberValue) -> Any? {
