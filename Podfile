@@ -1,5 +1,5 @@
 
-platform :ios, '9.0'
+platform :ios, '10.0'
 use_frameworks!
 
 target 'RxSwift-MVVM-Demo' do
@@ -19,8 +19,9 @@ target 'RxSwift-MVVM-Demo' do
     pod 'RxDataSources'
     pod 'NSObject+Rx'
     pod 'RxOptional'
-    pod 'Then'
+    pod 'Then', '~> 2.5.0'
     pod 'EmptyDataSet-Swift', '~> 4.2.0'
+    pod 'RxReachability'
     
 # OC库
     pod 'MJRefresh'

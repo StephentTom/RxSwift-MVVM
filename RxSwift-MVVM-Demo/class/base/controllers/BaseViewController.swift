@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  BaseViewController.swift
 //  RxSwift-MVVM-Demo
 //
 //  Created by Mr.Hong on 2019/9/28.
@@ -8,13 +8,21 @@
 
 import UIKit
 
-class ViewController: UIViewController {
 
+
+class BaseViewController: UIViewController {
+    // MARK: UI
+    
+    
+    // MARK: Datasource
+    
+    
+    // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
     }
-
-
 }
+
+
 
