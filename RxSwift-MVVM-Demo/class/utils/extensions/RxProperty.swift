@@ -37,3 +37,21 @@ extension Reactive where Base: MJRefreshHeader {
     }
 }
 
+// MARK: - 刷新尾部控件
+extension Reactive where Base: MJRefreshFooter {
+    var footerState: Binder<FooterState> {
+        return Binder(base) { (footer, state) in
+            switch state {
+            case .default:
+                footer.isHidden = false
+                footer.resetNoMoreData()
+            case .hidden:
+                footer.isHidden = true
+                footer.resetNoMoreData()
+            case .noMoredData:
+                footer.isHidden = false
+                footer.endRefreshingWithNoMoreData()
+            }
+        }
+    }
+}

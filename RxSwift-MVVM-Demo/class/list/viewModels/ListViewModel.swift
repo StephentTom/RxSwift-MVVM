@@ -17,7 +17,7 @@ class ListViewModel: RefreshViewModel {
     }
     
     struct ListOutput {
-        
+//        var messages: Driver<>
     }
 }
 

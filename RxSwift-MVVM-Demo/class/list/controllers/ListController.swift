@@ -10,6 +10,11 @@ import UIKit
 import RxSwift
 import RxCocoa
 import SnapKit
+import MJRefresh
+import RxDataSources
+
+
+private let kCellIdentifire = "ListCell"
 
 class ListController: BaseTableController<ListViewModel> {
     // MARK: - UI
@@ -22,23 +27,35 @@ class ListController: BaseTableController<ListViewModel> {
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        setupUI()
+        
+        ListApi
+        .messageList(0)
+        .request()
+        .mapJSON()
+        .asObservable()
+        .subscribe(onNext: { (rs) in
+            print("rs:", rs)
+        })
+        .disposed(by: rx.disposeBag)
     }
-}
-
-extension ListController {
-    func setupUI() {
+    
+    // MARK: - 重写父类
+    override func setupUI() {
+        super.setupUI()
+        
+        tableView.headerControl = MJRefreshNormalHeader()
+        tableView.footerControl = MJRefreshAutoNormalFooter()
         tableView.rowHeight = 55
         tableView.tableFooterView = UIView()
         view.addSubview(tableView)
-        
+
         tableView.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
         }
     }
 }
 
+// MARK: - RxDataSources
 extension ListController {
     
 }

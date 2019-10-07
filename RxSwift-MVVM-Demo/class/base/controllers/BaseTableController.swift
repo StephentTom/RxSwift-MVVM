@@ -38,15 +38,28 @@ class BaseTableController<RefrshVM: RefreshViewModel>: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupUI()
         bindHeader()
         bindFooter()
     }
+    
+    // MARK: - 子类可重写
+    /// 设置UI
+    func setupUI() {
+        
+    }
+    /// 设置tableView风格
+    func style() -> UITableView.Style {
+        return .plain
+    }
 }
 
-// MARK: - 绑定
+// MARK: - 刷新控件绑定
 extension BaseTableController {
     func bindHeader() {
-        tableView.mj_header.rx
+        guard let headerControl = tableView.headerControl else { return }
+        
+        headerControl.rx
         .beginRefresh
         .asDriver()
         .drive(viewModel.refreshInputs.beginHeaderRefresh)
@@ -66,20 +79,35 @@ extension BaseTableController {
     }
     
     func bindFooter() {
+        guard let footerControl = tableView.footerControl else { return }
         
+        footerControl.rx
+        .beginRefresh
+        .asDriver()
+        .drive(viewModel.refreshInputs.beginFooterRefresh)
+        .disposed(by: rx.disposeBag)
+        
+        viewModel
+        .refreshOutputs
+        .endFooterRefreshRespond
+        .drive(footerControl.rx.footerState)
+        .disposed(by: rx.disposeBag)
+        
+        viewModel
+        .error
+        .map { [unowned self] _ -> FooterState in
+            let state: FooterState =  self.tableView.isTotalDataEmpty ? .hidden : .default
+            return state
+        }
+        .drive(footerControl.rx.footerState)
+        .disposed(by: rx.disposeBag)
     }
 }
 
-
-// MARK: - 子类可调用、重写
+// MARK: - 子类可调用
 extension BaseTableController {
-    /// 设置tableView风格
-    func style() -> UITableView.Style {
-        return .plain
-    }
-    
     /// 开启头部刷新
     final func startHeaderRefresh() {
-        tableView.mj_header.beginRefreshing()
+        tableView.headerControl?.beginRefreshing()
     }
 }
