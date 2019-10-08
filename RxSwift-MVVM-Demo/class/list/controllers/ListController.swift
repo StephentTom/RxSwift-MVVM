@@ -29,7 +29,7 @@ class ListController: BaseTableController<ListViewModel> {
         super.viewDidLoad()
         
         ListApi
-        .messageList(0)
+        .messageList(1)
         .request()
         .mapJSON()
         .asObservable()

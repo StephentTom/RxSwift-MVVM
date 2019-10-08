@@ -10,4 +10,5 @@
 import Foundation
 
 
-let baseURLString = "http://bu.ngrok.i84.com.cn/i84srv"
+let baseURLString = "https://github.com"
+

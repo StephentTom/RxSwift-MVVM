@@ -21,7 +21,7 @@ extension ListApi: TargetType {
     
     var path: String {
         switch self {
-        case .messageList: return "/attendanceMessage/getIntradayMessageInfo"
+        case .messageList: return "/search"
         }
     }
     
@@ -38,7 +38,7 @@ extension ListApi: TargetType {
         
         switch self {
         case let .messageList(page):
-            params = ["start" : page, "limit" : 10]
+            params = ["p" : page, "l" : "Swift", "q" : "Rxswift", "type" : "Repositories"]
         }
         
         return .requestParameters(parameters: params, encoding: URLEncoding.default)
