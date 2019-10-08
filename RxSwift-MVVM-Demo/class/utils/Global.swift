@@ -10,5 +10,7 @@
 import Foundation
 
 
+let defaultErrorCode = 99999
+
 let baseURLString = "https://api.github.com"
 

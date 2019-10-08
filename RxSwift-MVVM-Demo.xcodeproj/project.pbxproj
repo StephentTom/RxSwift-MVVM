@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		647F1DBB6A5031931A4B7439 /* Pods_RxSwift_MVVM_Demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FEA300D250A3042C89C7A57 /* Pods_RxSwift_MVVM_Demo.framework */; };
+		AA01A6D1234CD50A00D2EBD5 /* ListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA01A6D0234CD50A00D2EBD5 /* ListModel.swift */; };
+		AA01A6D3234CD83000D2EBD5 /* JSONToModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA01A6D2234CD83000D2EBD5 /* JSONToModel.swift */; };
+		AA01A6D5234CDD8E00D2EBD5 /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA01A6D4234CDD8E00D2EBD5 /* Enum.swift */; };
+		AA01A6D7234CDDE300D2EBD5 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA01A6D6234CDDE300D2EBD5 /* Utils.swift */; };
 		AA100D1B2348756200672ED1 /* DetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA100D1A2348756200672ED1 /* DetailController.swift */; };
 		AA100D1E2348790A00672ED1 /* ListTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA100D1D2348790A00672ED1 /* ListTarget.swift */; };
 		AA100D2123487A3600672ED1 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA100D2023487A3600672ED1 /* Global.swift */; };
@@ -37,6 +41,10 @@
 		6FEA300D250A3042C89C7A57 /* Pods_RxSwift_MVVM_Demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxSwift_MVVM_Demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		707AEAE3137A42F1B5F244C1 /* Pods-RxSwift-MVVM-Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwift-MVVM-Demo.debug.xcconfig"; path = "Target Support Files/Pods-RxSwift-MVVM-Demo/Pods-RxSwift-MVVM-Demo.debug.xcconfig"; sourceTree = "<group>"; };
 		73DB6AC0F7B971D98532D47D /* Pods-RxSwift-MVVM-Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwift-MVVM-Demo.release.xcconfig"; path = "Target Support Files/Pods-RxSwift-MVVM-Demo/Pods-RxSwift-MVVM-Demo.release.xcconfig"; sourceTree = "<group>"; };
+		AA01A6D0234CD50A00D2EBD5 /* ListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListModel.swift; sourceTree = "<group>"; };
+		AA01A6D2234CD83000D2EBD5 /* JSONToModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONToModel.swift; sourceTree = "<group>"; };
+		AA01A6D4234CDD8E00D2EBD5 /* Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enum.swift; sourceTree = "<group>"; };
+		AA01A6D6234CDDE300D2EBD5 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		AA100D1A2348756200672ED1 /* DetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailController.swift; sourceTree = "<group>"; };
 		AA100D1D2348790A00672ED1 /* ListTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTarget.swift; sourceTree = "<group>"; };
 		AA100D2023487A3600672ED1 /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
@@ -136,7 +144,10 @@
 		AA100D1F23487A2000672ED1 /* utils */ = {
 			isa = PBXGroup;
 			children = (
+				AA01A6D6234CDDE300D2EBD5 /* Utils.swift */,
 				AA100D2023487A3600672ED1 /* Global.swift */,
+				AA01A6D4234CDD8E00D2EBD5 /* Enum.swift */,
+				AA01A6D2234CD83000D2EBD5 /* JSONToModel.swift */,
 				AA244B682348E38A00C58957 /* protocols */,
 				AA244B672348E37700C58957 /* extensions */,
 			);
@@ -170,6 +181,7 @@
 		AA18705D23486D3A00ECC7A2 /* models */ = {
 			isa = PBXGroup;
 			children = (
+				AA01A6D0234CD50A00D2EBD5 /* ListModel.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -441,6 +453,8 @@
 				AA244B662348D95200C58957 /* ListCell.swift in Sources */,
 				AA100D1B2348756200672ED1 /* DetailController.swift in Sources */,
 				AA1F6791234390EC00274AD8 /* BaseViewModel.swift in Sources */,
+				AA01A6D5234CDD8E00D2EBD5 /* Enum.swift in Sources */,
+				AA01A6D3234CD83000D2EBD5 /* JSONToModel.swift in Sources */,
 				AA8C5A49233F9EBC00C7A888 /* AppDelegate.swift in Sources */,
 				AA1F679A2343995100274AD8 /* ActivityIndicator.swift in Sources */,
 				AA100D1E2348790A00672ED1 /* ListTarget.swift in Sources */,
@@ -451,8 +465,10 @@
 				AA1F67932343910C00274AD8 /* RefreshViewModel.swift in Sources */,
 				AAB2D9E5234987B900C03AF9 /* RxProperty.swift in Sources */,
 				AA1EA4DD234B4B2100AD1F72 /* UIScrollView+.swift in Sources */,
+				AA01A6D1234CD50A00D2EBD5 /* ListModel.swift in Sources */,
 				AAB2D9E72349BB2F00C03AF9 /* Rx.swift in Sources */,
 				AA8C5A5D233FB08E00C7A888 /* BaseTableController.swift in Sources */,
+				AA01A6D7234CDDE300D2EBD5 /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

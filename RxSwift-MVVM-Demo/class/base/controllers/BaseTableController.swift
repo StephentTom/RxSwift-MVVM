@@ -28,7 +28,7 @@ class BaseTableController<RefrshVM: RefreshViewModel>: UIViewController {
         viewModel
         .loading
         .asDriver()
-        .drive(self.isLoading)
+        .drive(isLoading)
         .disposed(by: rx.disposeBag)
 
         return viewModel
