@@ -21,12 +21,12 @@ extension ListApi: TargetType {
     
     var path: String {
         switch self {
-        case .messageList: return "/search"
+        case .messageList: return "/search/users"
         }
     }
     
     var method: Method {
-        return .post
+        return .get
     }
     
     var sampleData: Data {
@@ -38,7 +38,7 @@ extension ListApi: TargetType {
         
         switch self {
         case let .messageList(page):
-            params = ["p" : page, "l" : "Swift", "q" : "Rxswift", "type" : "Repositories"]
+            params = ["page":page, "per_page":"10", "q":"Rxswift", "type":"Users"]
         }
         
         return .requestParameters(parameters: params, encoding: URLEncoding.default)

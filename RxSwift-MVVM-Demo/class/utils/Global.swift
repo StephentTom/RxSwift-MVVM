@@ -10,5 +10,5 @@
 import Foundation
 
 
-let baseURLString = "https://github.com"
+let baseURLString = "https://api.github.com"
 
