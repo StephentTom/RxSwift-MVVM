@@ -8,6 +8,7 @@
 //
 
 import Foundation
+import Reachability
 
 
 let baseURLString = "https://api.github.com"
@@ -15,4 +16,7 @@ let baseURLString = "https://api.github.com"
 let defaultErrorCode = 99999
 
 let kPageCount = 10
+
+/// 监听网络对象
+let reachability = Reachability()
 

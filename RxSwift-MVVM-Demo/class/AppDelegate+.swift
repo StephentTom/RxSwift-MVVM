@@ -16,5 +16,7 @@ extension AppDelegate {
     func setNetwork() {
         Network.Configuration.default.timeoutInterval = 15
         Network.Configuration.default.plugins = [NetworkPlugin()]
+        
+        try? reachability?.startNotifier()
     }
 }
