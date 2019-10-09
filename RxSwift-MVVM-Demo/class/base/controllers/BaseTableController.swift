@@ -110,4 +110,12 @@ extension BaseTableController {
     final func startHeaderRefresh() {
         tableView.headerControl?.beginRefreshing()
     }
+    
+    /// 显示Toast
+    final func bindLoadToast() {
+        viewModel
+        .loading
+        .drive(rx.isShowToast)
+        .disposed(by: rx.disposeBag)
+    }
 }

@@ -55,3 +55,12 @@ extension Reactive where Base: MJRefreshFooter {
         }
     }
 }
+
+// MARK: - UIViewController
+extension Reactive where Base: UIViewController {
+    var isShowToast: Binder<Bool> {
+        return Binder(base) { (_, isShow) in
+            isShow ? Toast.default.show() : Toast.default.dismiss()
+        }
+    }
+}

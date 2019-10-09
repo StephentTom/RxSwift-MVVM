@@ -19,7 +19,11 @@ class ListCell: UITableViewCell {
     }
     
     // MARK: - Datasource
-    
+    var itemModel: ListItemModel? {
+        didSet {
+            setValue()
+        }
+    }
     
     // MARK: - init
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -40,5 +44,9 @@ extension ListCell {
             make.edges
                 .equalTo(UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10))
         }
+    }
+    
+    func setValue() {
+        titleLabel.text = itemModel?.login
     }
 }

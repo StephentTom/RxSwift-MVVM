@@ -10,7 +10,9 @@
 import Foundation
 
 
+let baseURLString = "https://api.github.com"
+
 let defaultErrorCode = 99999
 
-let baseURLString = "https://api.github.com"
+let kPageCount = 10
 

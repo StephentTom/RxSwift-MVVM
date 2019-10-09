@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import NSObject_Rx
 
 
 class BaseViewModel: NSObject {
@@ -16,3 +17,5 @@ class BaseViewModel: NSObject {
     
     required override init() {}
 }
+
+extension BaseViewModel: HasDisposeBag { }

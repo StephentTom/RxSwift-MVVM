@@ -38,7 +38,7 @@ extension ListApi: TargetType {
         
         switch self {
         case let .messageList(page):
-            params = ["page":page, "per_page":"10", "q":"Rxswift", "type":"Users"]
+            params = ["page":page, "per_page":kPageCount, "q":"Rxswift", "type":"Users"]
         }
         
         return .requestParameters(parameters: params, encoding: URLEncoding.default)

@@ -13,7 +13,7 @@ import KakaJSON
 struct ListResultModel: Convertible {
     var total_count: Int = 0
     var incomplete_results: Int = 0
-    var items: Array<[ListItemModel]> = []
+    var items: Array<ListItemModel> = []
 }
 
 struct ListItemModel: Convertible {

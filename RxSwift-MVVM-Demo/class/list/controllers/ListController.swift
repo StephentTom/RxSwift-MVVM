@@ -28,15 +28,8 @@ class ListController: BaseTableController<ListViewModel> {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        ListApi
-        .messageList(1)
-        .request()
-        .mapJSON()
-        .asObservable()
-        .subscribe(onNext: { (rs) in
-            print("rs:", rs)
-        })
-        .disposed(by: rx.disposeBag)
+        bindData()
+        startHeaderRefresh()
     }
     
     // MARK: - 重写父类
@@ -47,6 +40,7 @@ class ListController: BaseTableController<ListViewModel> {
         tableView.footerControl = MJRefreshAutoNormalFooter()
         tableView.rowHeight = 55
         tableView.tableFooterView = UIView()
+        tableView.register(ListCell.self, forCellReuseIdentifier: kCellIdentifire)
         view.addSubview(tableView)
 
         tableView.snp.makeConstraints { (make) in
@@ -57,5 +51,14 @@ class ListController: BaseTableController<ListViewModel> {
 
 // MARK: - RxDataSources
 extension ListController {
-    
+    func bindData() {
+        let listOutput = viewModel.transform(input: listInput)
+        
+        listOutput
+        .list
+        .drive(tableView.rx.items(cellIdentifier: kCellIdentifire, cellType: ListCell.self)){ (row, itemModel, cell) in
+            cell.itemModel = itemModel
+        }
+        .disposed(by: rx.disposeBag)
+    }
 }

@@ -9,10 +9,8 @@
 import Foundation
 
 struct Utils {
-    static let `default` = Utils()
-    
     /// 获取网络请求失败原因
-    func getNetworkError(_ code: Int) -> String {
+    static func getNetworkError(_ code: Int) -> String {
         switch code {
         case NSURLErrorTimedOut:
             return "抱歉，请求超时"
