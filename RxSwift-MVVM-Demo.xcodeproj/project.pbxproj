@@ -29,6 +29,9 @@
 		AA1F679A2343995100274AD8 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1F67982343995100274AD8 /* ActivityIndicator.swift */; };
 		AA244B662348D95200C58957 /* ListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA244B652348D95200C58957 /* ListCell.swift */; };
 		AA244B6A2348E3A200C58957 /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA244B692348E3A200C58957 /* String+.swift */; };
+		AA6B1AB4234F872400AA9F10 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6B1AB3234F872400AA9F10 /* DetailViewModel.swift */; };
+		AA6B1AB6234F872C00AA9F10 /* DetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6B1AB5234F872C00AA9F10 /* DetailModel.swift */; };
+		AA6B1AB8234F874400AA9F10 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6B1AB7234F874400AA9F10 /* DetailView.swift */; };
 		AA8C5A49233F9EBC00C7A888 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8C5A48233F9EBC00C7A888 /* AppDelegate.swift */; };
 		AA8C5A4B233F9EBC00C7A888 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8C5A4A233F9EBC00C7A888 /* SceneDelegate.swift */; };
 		AA8C5A4D233F9EBC00C7A888 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8C5A4C233F9EBC00C7A888 /* BaseViewController.swift */; };
@@ -65,6 +68,9 @@
 		AA1F67982343995100274AD8 /* ActivityIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		AA244B652348D95200C58957 /* ListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCell.swift; sourceTree = "<group>"; };
 		AA244B692348E3A200C58957 /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
+		AA6B1AB3234F872400AA9F10 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
+		AA6B1AB5234F872C00AA9F10 /* DetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailModel.swift; sourceTree = "<group>"; };
+		AA6B1AB7234F874400AA9F10 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		AA8C5A45233F9EBC00C7A888 /* RxSwift-MVVM-Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RxSwift-MVVM-Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA8C5A48233F9EBC00C7A888 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AA8C5A4A233F9EBC00C7A888 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -113,6 +119,7 @@
 		AA100D162348752B00672ED1 /* viewModels */ = {
 			isa = PBXGroup;
 			children = (
+				AA6B1AB3234F872400AA9F10 /* DetailViewModel.swift */,
 			);
 			path = viewModels;
 			sourceTree = "<group>";
@@ -120,6 +127,7 @@
 		AA100D172348753100672ED1 /* models */ = {
 			isa = PBXGroup;
 			children = (
+				AA6B1AB5234F872C00AA9F10 /* DetailModel.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -127,6 +135,7 @@
 		AA100D182348753400672ED1 /* views */ = {
 			isa = PBXGroup;
 			children = (
+				AA6B1AB7234F874400AA9F10 /* DetailView.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -459,6 +468,7 @@
 				AA18706123486F3A00ECC7A2 /* ListViewModel.swift in Sources */,
 				AA1F67992343995100274AD8 /* ErrorTracker.swift in Sources */,
 				AA8C5A4D233F9EBC00C7A888 /* BaseViewController.swift in Sources */,
+				AA6B1AB4234F872400AA9F10 /* DetailViewModel.swift in Sources */,
 				AA18705F23486EDB00ECC7A2 /* ListController.swift in Sources */,
 				AA244B662348D95200C58957 /* ListCell.swift in Sources */,
 				AA100D1B2348756200672ED1 /* DetailController.swift in Sources */,
@@ -469,7 +479,9 @@
 				AA100D1E2348790A00672ED1 /* ListApi.swift in Sources */,
 				9A9636F4234DB2B90022A9C8 /* Toast.swift in Sources */,
 				AA8C5A4B233F9EBC00C7A888 /* SceneDelegate.swift in Sources */,
+				AA6B1AB8234F874400AA9F10 /* DetailView.swift in Sources */,
 				AA100D242348805300672ED1 /* ViewModelProtocol.swift in Sources */,
+				AA6B1AB6234F872C00AA9F10 /* DetailModel.swift in Sources */,
 				AA1870632348717D00ECC7A2 /* AppDelegate+.swift in Sources */,
 				AA244B6A2348E3A200C58957 /* String+.swift in Sources */,
 				AA1F67932343910C00274AD8 /* RefreshViewModel.swift in Sources */,
