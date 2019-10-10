@@ -10,11 +10,12 @@
 		647F1DBB6A5031931A4B7439 /* Pods_RxSwift_MVVM_Demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FEA300D250A3042C89C7A57 /* Pods_RxSwift_MVVM_Demo.framework */; };
 		9A9636F0234D9CFE0022A9C8 /* PluginsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9636EF234D9CFE0022A9C8 /* PluginsManager.swift */; };
 		9A9636F4234DB2B90022A9C8 /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9636F3234DB2B90022A9C8 /* Toast.swift */; };
+		9ACEDEA8234EC03200FCB8F6 /* DetailApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACEDEA7234EC03200FCB8F6 /* DetailApi.swift */; };
 		AA01A6D1234CD50A00D2EBD5 /* ListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA01A6D0234CD50A00D2EBD5 /* ListModel.swift */; };
 		AA01A6D3234CD83000D2EBD5 /* JSONToModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA01A6D2234CD83000D2EBD5 /* JSONToModel.swift */; };
 		AA01A6D7234CDDE300D2EBD5 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA01A6D6234CDDE300D2EBD5 /* Utils.swift */; };
 		AA100D1B2348756200672ED1 /* DetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA100D1A2348756200672ED1 /* DetailController.swift */; };
-		AA100D1E2348790A00672ED1 /* ListTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA100D1D2348790A00672ED1 /* ListTarget.swift */; };
+		AA100D1E2348790A00672ED1 /* ListApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA100D1D2348790A00672ED1 /* ListApi.swift */; };
 		AA100D2123487A3600672ED1 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA100D2023487A3600672ED1 /* Global.swift */; };
 		AA100D242348805300672ED1 /* ViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA100D232348805300672ED1 /* ViewModelProtocol.swift */; };
 		AA18705F23486EDB00ECC7A2 /* ListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA18705E23486EDB00ECC7A2 /* ListController.swift */; };
@@ -44,11 +45,12 @@
 		73DB6AC0F7B971D98532D47D /* Pods-RxSwift-MVVM-Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwift-MVVM-Demo.release.xcconfig"; path = "Target Support Files/Pods-RxSwift-MVVM-Demo/Pods-RxSwift-MVVM-Demo.release.xcconfig"; sourceTree = "<group>"; };
 		9A9636EF234D9CFE0022A9C8 /* PluginsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PluginsManager.swift; sourceTree = "<group>"; };
 		9A9636F3234DB2B90022A9C8 /* Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
+		9ACEDEA7234EC03200FCB8F6 /* DetailApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailApi.swift; sourceTree = "<group>"; };
 		AA01A6D0234CD50A00D2EBD5 /* ListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListModel.swift; sourceTree = "<group>"; };
 		AA01A6D2234CD83000D2EBD5 /* JSONToModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONToModel.swift; sourceTree = "<group>"; };
 		AA01A6D6234CDDE300D2EBD5 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		AA100D1A2348756200672ED1 /* DetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailController.swift; sourceTree = "<group>"; };
-		AA100D1D2348790A00672ED1 /* ListTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTarget.swift; sourceTree = "<group>"; };
+		AA100D1D2348790A00672ED1 /* ListApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListApi.swift; sourceTree = "<group>"; };
 		AA100D2023487A3600672ED1 /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		AA100D232348805300672ED1 /* ViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelProtocol.swift; sourceTree = "<group>"; };
 		AA18705E23486EDB00ECC7A2 /* ListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListController.swift; sourceTree = "<group>"; };
@@ -138,7 +140,8 @@
 		AA100D1C234878E400672ED1 /* targets */ = {
 			isa = PBXGroup;
 			children = (
-				AA100D1D2348790A00672ED1 /* ListTarget.swift */,
+				AA100D1D2348790A00672ED1 /* ListApi.swift */,
+				9ACEDEA7234EC03200FCB8F6 /* DetailApi.swift */,
 			);
 			path = targets;
 			sourceTree = "<group>";
@@ -459,7 +462,7 @@
 				AA01A6D3234CD83000D2EBD5 /* JSONToModel.swift in Sources */,
 				AA8C5A49233F9EBC00C7A888 /* AppDelegate.swift in Sources */,
 				AA1F679A2343995100274AD8 /* ActivityIndicator.swift in Sources */,
-				AA100D1E2348790A00672ED1 /* ListTarget.swift in Sources */,
+				AA100D1E2348790A00672ED1 /* ListApi.swift in Sources */,
 				9A9636F4234DB2B90022A9C8 /* Toast.swift in Sources */,
 				AA8C5A4B233F9EBC00C7A888 /* SceneDelegate.swift in Sources */,
 				AA100D242348805300672ED1 /* ViewModelProtocol.swift in Sources */,
@@ -473,6 +476,7 @@
 				AAB2D9E72349BB2F00C03AF9 /* Rx.swift in Sources */,
 				AA8C5A5D233FB08E00C7A888 /* BaseTableController.swift in Sources */,
 				AA01A6D7234CDDE300D2EBD5 /* Utils.swift in Sources */,
+				9ACEDEA8234EC03200FCB8F6 /* DetailApi.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

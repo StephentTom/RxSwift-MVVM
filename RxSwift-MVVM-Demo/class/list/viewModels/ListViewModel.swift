@@ -90,6 +90,7 @@ extension ListViewModel {
             .messageList(page)
             .request()
             .mapJSON()
+            .debug()
             .asObservable()
             .mapModel(ListResultModel.self)
             .trackActivity(loading)
