@@ -7,28 +7,34 @@
 //
 
 import UIKit
+import SnapKit
+import RxSwift
+import RxCocoa
+
 
 class DetailController: BaseViewController {
     // MARK: - UI
+    private lazy var detailView = DetailView()
     
     
     // MARK: - Datasource
-    var name: String = ""
+    var username: String = ""
     
     
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.title = "\(name)详情"
+        self.navigationController?.title = "\(username)详情"
         
-        DetailApi
-        .detail(name: "RxSwift")
-        .request()
-        .mapJSON()
-        .asObservable()
-        .subscribe(onNext: { (rs) in
-            print(rs)
-        })
-        .disposed(by: rx.disposeBag)
+        setupUI()
+    }
+}
+
+// MARK: - UI
+extension DetailController {
+    func setupUI() {
+        view.addSubview(detailView)
+        
+        
     }
 }

@@ -60,5 +60,18 @@ extension ListController {
             cell.itemModel = itemModel
         }
         .disposed(by: rx.disposeBag)
+        
+        tableView.rx
+        .modelSelected(ListItemModel.self)
+        .asDriver()
+        .drive(onNext: { [unowned self] (itemModel) in
+            let detailVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "detail") as! DetailController
+            detailVC.username = itemModel.login
+            
+            self.navigationController?
+                .pushViewController(detailVC, animated: true)
+        })
+        .disposed(by: rx.disposeBag)
+        
     }
 }
