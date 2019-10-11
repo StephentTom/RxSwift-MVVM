@@ -29,13 +29,13 @@ class BaseTableController<RefrshVM: RefreshViewModel>: UIViewController {
     let isLoading = BehaviorRelay<Bool>(value: false)
     /// 数据源 nil/空 时点击view
     let didTapEmptyView = PublishSubject<Void>()
-    /// 数据源 nil/空 时显示的标题
+    /// 数据源 nil/空 时显示的标题(默认标题)
     var emptyDataSetTitle = "暂无数据"
-    /// 数据源 nil/空 时显示的图片
+    /// 数据源 nil/空 时显示的图片(默认图片名称)
     var emptyDataSetImage = ""
-    /// 没有网络时显示的标题
+    /// 没有网络时显示的标题(默认标题)
     var noConnectionTitle = "请检测您的网络"
-    /// 没有网络时显示的图片
+    /// 没有网络时显示的图片(默认图片名称)
     var noConnectionImage = ""
     /// 默认初始化VM
     lazy var viewModel: RefrshVM = {
@@ -57,6 +57,7 @@ class BaseTableController<RefrshVM: RefreshViewModel>: UIViewController {
         setupUI()
         bindHeader()
         bindFooter()
+        bindReloadEmptyData()
         bindReachability()
     }
     
@@ -71,7 +72,7 @@ class BaseTableController<RefrshVM: RefreshViewModel>: UIViewController {
     }
 }
 
-// MARK: - 刷新控件 + 网络状态绑定
+// MARK: - 刷新控件 + 刷新EmptyData + 网络状态绑定
 extension BaseTableController {
     func bindHeader() {
         guard let headerControl = tableView.headerControl else { return }
@@ -117,6 +118,15 @@ extension BaseTableController {
             return state
         }
         .drive(footerControl.rx.footerState)
+        .disposed(by: rx.disposeBag)
+    }
+    
+    func bindReloadEmptyData() {
+        viewModel
+        .loading
+        .distinctUntilChanged()
+        .mapToVoid()
+        .drive(tableView.rx.reloadEmptyData)
         .disposed(by: rx.disposeBag)
     }
     

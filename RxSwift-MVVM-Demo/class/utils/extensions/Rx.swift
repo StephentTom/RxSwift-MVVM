@@ -25,7 +25,7 @@ extension Driver {
     }
 }
 
-/** RangeReplaceableCollectionType: 使用数组的时候，总是需要对数组进行管理操作的吧，比方说增、删、改数组的内部元素。定义这些任务就是RangeReplaceableCollectionType协议存在的价值，如果我们准守了RangeReplaceableCollectionType协议，那么我们将会获得以下管理数组的方法 */
+/** RangeReplaceableCollectionType: 使用数组的时候，总是需要对数组进行管理操作，比方说增、删、改数组的内部元素。定义这些任务就是RangeReplaceableCollectionType协议存在的价值，如果我们准守了RangeReplaceableCollectionType协议，那么我们将会获得以下管理数组的方法 */
 extension BehaviorRelay where Element: RangeReplaceableCollection {
     var append: AnyObserver<Element> {
         return AnyObserver { event in

@@ -8,7 +8,7 @@
 
 import SVProgressHUD
 
-/** ⚠️: SVProgressHUD未做iOS 13.0+ 适配 因此这里使用会出现崩溃 */
+/** ⚠️: SVProgressHUD未做iOS 13.0+ 适配 因此使用会出现崩溃 */
 class Toast {
     static let `default` = Toast()
     private init() {

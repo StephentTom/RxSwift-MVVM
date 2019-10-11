@@ -29,6 +29,8 @@ class ListController: BaseTableController<ListViewModel> {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        emptyDataSetTitle = "抱歉, 数据不在状态, 无法显示!"
+        
         bindData()
         startHeaderRefresh()
     }
@@ -73,6 +75,5 @@ extension ListController {
                 .pushViewController(detailVC, animated: true)
         })
         .disposed(by: rx.disposeBag)
-        
     }
 }

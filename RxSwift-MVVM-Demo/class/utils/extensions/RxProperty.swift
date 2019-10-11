@@ -9,6 +9,7 @@
 import RxSwift
 import RxCocoa
 import MJRefresh
+import EmptyDataSet_Swift
 
 
 // MARK: - 头部/尾部刷新
@@ -23,7 +24,6 @@ extension Reactive where Base: MJRefreshComponent {
             }
             return Disposables.create()
         }
-        
         return ControlEvent(events: source)
     }
 }
@@ -52,6 +52,15 @@ extension Reactive where Base: MJRefreshFooter {
                 footer.isHidden = false
                 footer.endRefreshingWithNoMoreData()
             }
+        }
+    }
+}
+
+// MARK: - UITableView
+extension Reactive where Base: UITableView {
+    var reloadEmptyData: Binder<Void> {
+        return Binder(base) { (this, _) in
+            this.reloadEmptyDataSet()
         }
     }
 }
