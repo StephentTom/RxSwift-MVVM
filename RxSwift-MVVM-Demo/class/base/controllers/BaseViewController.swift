@@ -10,17 +10,33 @@ import UIKit
 
 
 
-class BaseViewController: UIViewController {
+class BaseViewController<VM: BaseViewModel>: UIViewController {
     // MARK: UI
     
     
     // MARK: Datasource
-    
+    lazy var viewModel: VM = {
+        guard let classType = "\(VM.self)".getClass(VM.self) else { return VM() }
+        
+        let viewModel = classType.init()
+
+        return viewModel
+    }()
     
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
+    }
+}
+ 
+// MARK: - 子类可调用
+extension BaseViewController {
+    func bindToast() {
+        viewModel
+        .loading
+        .drive(rx.isShowToast)
+        .disposed(by: rx.disposeBag)
     }
 }
 

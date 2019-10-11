@@ -11,7 +11,8 @@ import KakaJSON
 
 
 struct DetailModel: Convertible {
-    var avatar_url: String?
+    var avatar_url: String = ""
+    var name: String = ""
     var created_at: String = ""
     var updated_at: String = ""
 }

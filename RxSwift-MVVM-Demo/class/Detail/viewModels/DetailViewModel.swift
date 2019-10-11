@@ -52,6 +52,7 @@ extension DetailViewModel {
             .detail(name: name)
             .request()
             .mapJSON()
+            .debug()
             .asObservable()
             .mapModel(DetailModel.self)
             .trackActivity(loading)

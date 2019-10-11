@@ -12,6 +12,7 @@ import RxCocoa
 import SnapKit
 import MJRefresh
 import RxDataSources
+import MapKit
 
 
 private let kCellIdentifire = "ListCell"
@@ -42,7 +43,7 @@ class ListController: BaseTableController<ListViewModel> {
         tableView.tableFooterView = UIView()
         tableView.register(ListCell.self, forCellReuseIdentifier: kCellIdentifire)
         view.addSubview(tableView)
-
+        
         tableView.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
         }
