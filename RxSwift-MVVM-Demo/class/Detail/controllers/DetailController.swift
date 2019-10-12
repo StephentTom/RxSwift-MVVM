@@ -26,7 +26,7 @@ class DetailController: BaseViewController<DetailViewModel> {
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "\(username)详情"
+        self.navigationItem.title = "\(username)详情"
         
         setupUI()
         bindViewModel()
