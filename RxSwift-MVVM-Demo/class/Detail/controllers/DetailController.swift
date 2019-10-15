@@ -31,7 +31,7 @@ class DetailController: BaseViewController<DetailViewModel> {
         setupUI()
         bindViewModel()
         // 这里可调用父类Toast.(由于SVPrrogress 未适配iOS 13.0+ 会导致闪退, 这里就不做调用)
-         bindToast()
+        bindToast()
     }
 }
 

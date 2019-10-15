@@ -68,7 +68,8 @@ extension ListController {
         .modelSelected(ListItemModel.self)
         .asDriver()
         .drive(onNext: { [unowned self] (itemModel) in
-            let detailVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "detail") as! DetailController
+            let detailVC = UIStoryboard(name: "Main", bundle: nil)
+                .instantiateViewController(withIdentifier: "detail") as! DetailController
             detailVC.username = itemModel.login
             
             self.navigationController?
